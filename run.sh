@@ -81,4 +81,4 @@ echo "Starting XL2TPD process..."
 mkdir -p /var/run/xl2tpd
 /usr/sbin/xl2tpd -c /etc/xl2tpd/xl2tpd.conf
 
-ipsec start --nofork\
+ipsec start --nofork "$@"
