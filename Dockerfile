@@ -1,4 +1,4 @@
-FROM buildpack-deps:jessie
+FROM buildpack-deps:latest
 
 RUN mkdir -p /conf
 
