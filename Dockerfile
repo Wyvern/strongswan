@@ -1,4 +1,4 @@
-FROM buildpack-deps:latest
+FROM ubuntu:latest
 
 RUN mkdir -p /conf
 
@@ -6,8 +6,10 @@ RUN apt-get update && apt-get install -y \
   libgmp-dev \
   iptables \
   xl2tpd \
-  module-init-tools
-
+  module-init-tools\
+  build-essential\
+  curl wget libssl-dev
+	
 ENV STRONGSWAN_VERSION 5.5.1
 ENV GPG_KEY 948F158A4E76A27BF3D07532DF42C170B34DBA77
 
