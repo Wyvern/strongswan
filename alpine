@@ -3,7 +3,7 @@ FROM alpine
 RUN set -xe \
     && apk update \
     && apk upgrade \
-    && apk add --no-cache iptables xl2tpd openssl strongswan util-linux\
+    && apk add --no-cache iptables xl2tpd openssl strongswan util-linux
 
     
 # Strongswan Configuration
