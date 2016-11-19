@@ -77,10 +77,9 @@ if [ -f "/etc/ipsec.d/xl2tpd.conf" ]; then
 	cp -f /etc/ipsec.d/xl2tpd.conf /etc/xl2tpd/xl2tpd.conf
 fi
 
-echo "Starting XL2TPD process..."
-mkdir -p /var/run/xl2tpd
-/usr/sbin/xl2tpd -c /etc/xl2tpd/xl2tpd.conf
+#echo "Starting XL2TPD process..."
+#mkdir -p /var/run/xl2tpd
+#/usr/sbin/xl2tpd -c /etc/xl2tpd/xl2tpd.conf
 
-rm -f /var/run/starter.charon.pid
 
-ipsec start --nofork
+exec ipsec start --nofork
