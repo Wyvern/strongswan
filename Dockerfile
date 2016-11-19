@@ -10,6 +10,9 @@ RUN apt-get update && apt-get install -y \
   build-essential\
   curl wget libssl-dev
 	
+RUN sed -ie 's/#Storage=auto/Storage=none/g' /etc/systemd/journald.conf 
+RUN sed -ie 's/#LogLevel=info/LogLevel=alert/g; s/#LogTarget=journal-or-kmsg/LogTarget=null/g; s/#DumpCore=yes/DumpCore=no/g' /etc/systemd/system.conf 
+	
 ENV STRONGSWAN_VERSION 5.5.1
 ENV GPG_KEY 948F158A4E76A27BF3D07532DF42C170B34DBA77
 
