@@ -5,7 +5,7 @@ RUN mkdir -p /conf
 RUN apt-get update && apt-get install -y \
   libgmp-dev \
   iptables \
-  xl2tpd \
+  #xl2tpd \
   module-init-tools\
   build-essential\
   curl wget libssl-dev
@@ -44,8 +44,8 @@ ADD ipsec.conf /etc/ipsec.conf
 ADD strongswan.conf /etc/strongswan.conf
 
 # XL2TPD Configuration
-ADD xl2tpd.conf /etc/xl2tpd/xl2tpd.conf
-ADD options.xl2tpd /etc/ppp/options.xl2tpd
+#ADD xl2tpd.conf /etc/xl2tpd/xl2tpd.conf
+#ADD options.xl2tpd /etc/ppp/options.xl2tpd
 
 ADD run.sh /run.sh
 ADD vpn_adduser /usr/local/bin/vpn_adduser
