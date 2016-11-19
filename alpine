@@ -4,7 +4,8 @@ RUN set -xe \
     && apk update \
     && apk upgrade \
     && apk add --no-cache iptables xl2tpd openssl strongswan util-linux
-
+		
+RUN mkdir -p /conf
     
 # Strongswan Configuration
 ADD ipsec.conf /etc/ipsec.conf
