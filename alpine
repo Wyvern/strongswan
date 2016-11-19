@@ -3,7 +3,9 @@ FROM alpine
 RUN set -xe \
     && apk update \
     && apk upgrade \
-    && apk add --no-cache iptables xl2tpd openssl strongswan util-linux
+    && apk add --no-cache iptables xl2tpd openssl strongswan util-linux\
+		&& ln -sf /etc/ipsec.d/ipsec.conf /etc/ipsec.conf \
+    && ln -sf /etc/ipsec.d/ipsec.secrets /etc/ipsec.secrets
 		
     
 # Strongswan Configuration
@@ -27,7 +29,7 @@ ENV VPN_USER user
 ENV VPN_PASSWORD password
 ENV VPN_PSK password
 
-VOLUME ["/etc/ipsec.d"] 
+VOLUME /etc/ipsec.d /etc/strongswan.d
 VOLUME /lib/modules:/lib/modules
 VOLUME /etc/localtime:/etc/localtime
 
