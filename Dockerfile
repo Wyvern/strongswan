@@ -1,7 +1,5 @@
 FROM ubuntu:latest
 
-#RUN mkdir -p /conf
-
 RUN apt-get update && apt-get install -y \
   libgmp-dev \
   iptables \
